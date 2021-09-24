@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <canvas id="game" height="400" width="600" ></canvas>
+  
+  <script>
+  var headx = [], heady=[]  , dtx=0 , dty=0,x=[],y=[]
+var foodx,foody, dot=[],dx,dy;
+foodx=Math.floor(Math.random()*29)
+foody=Math.floor(Math.random()*19)
+headx[0]=15;heady[0]=10;
+headx[1]=14;heady[1]=10;
+headx[2]=13;heady[1]=10;
+headx[3]=12;heady[1]=10;
+
+slength=4;
+
+var c=document.getElementById('game'); 
+var ctx=c.getContext("2d");
+var c;
+document.addEventListener('keydown',buttom)
+
+
+
+
+
+set=setInterval(game,100);
+
+// Chương trình chính game
+function game(){  
+ //In điểm số
+ document.getElementById('diem').innerHTML='Điểm : ' + String(slength-4);
+ // Tránh cho rắn đi ngược
+ if (dx+dtx==0) {dtx=dx}
+ if (dy+dty==0) {dty=dy}
+ //Khởi đầu cho rắn sang phải
+ if (dtx==0 && dty==0) {dtx=1;dty=0}
+
+ //Biến nhớ cũ của dtx,dty
+ dx=dtx;
+ dy=dty;
+ 
+ // Rắn đi vượt phần khung
+ if (headx[0]==30) {headx[0]=0};
+ if (headx[0]==-1) {headx[0]=30};
+ if (heady[0]==-1) {heady[0]=19};
+ if (heady[0]==20) {heady[0]=-1};
+
+ //Biến nhớ phụ cho tọa độ đầu rắn
+ for (var i=0;i<slength;i++){
+   x[i]=headx[i];
+   y[i]=heady[i];
+   
+ }
+  
+//Di chuyển 
+ headx[0]=headx[0]+dtx;
+ heady[0]=heady[0]+dty;
+
+ ctx.fillStyle = 'black';
+ ctx.fillRect(00,0,600,400);
+ ctx.fillStyle='red'
+ ctx.fillRect(foodx*20,foody*20,19,19)
+
+  if(foodx==headx[0] && foody== heady[0]){
+    slength++;
+    foodx=Math.floor(Math.random()*29)
+    foody=Math.floor(Math.random()*19)
+  }
+  ctx.fillStyle = 'red'
+  ctx.fillRect(headx[0]*20,heady[0]*20,19,19);
+  
+   
+ for(var i=1;i<slength;i++){
+   headx[i]=x[i-1];
+   heady[i]=y[i-1];
+   ctx.fillStyle = 'yellow'
+   ctx.fillRect(headx[i]*20,heady[i]*20,19,19);
+ }
+   // Check sống chết
+   for (var i=2;i<slength;i++){
+   if(headx[0]==headx[i] && heady[0]==heady[i])
+    { 
+     headx[0]=headx[0]-dtx;
+     heady[0]=heady[0]-dty;
+     ctx.fillStyle = 'red'
+     ctx.fillRect(headx[0]*20,heady[0]*20,19,19);
+     clearInterval(set)}
+    }
+    
+}
+//Key
+function buttom(key){
+switch(k=key.keyCode){
+  case 37 : dtx=-1;dty=0 
+  break;
+
+  case 38 :dtx=0; dty=-1
+  break;
+
+  case 39 : dtx=1; dty=0
+  break;
+
+  case 40 : dtx=0; dty=1
+  break;
+
+  case 61 : dtx=-1;dty=0 
+  break;
+
+  case 77 :dtx=0; dty=-1
+  break;
+
+  case 64 : dtx=1; dty=0
+  break;
+
+  case 73: dtx=0; dty=1
+  break;
+}
+}
+function click1() {
+  dty=-1;dtx=0;
+}
+function click2() {
+  dtx=-1;dty=0;
+}
+function click3() {
+  dty=1;dtx=0;
+}
+function click4() {
+  dtx=1;dty=0;
+}
+  </script>   
+  <h1 id="diem"></h1>
+  <img src="https://i.pinimg.com/564x/2b/21/ba/2b21babfa55fd1d603952a7dd9ea150e.jpg" width="300" style="vertical-align:middle;margin:0 150px" usemap="#workmap">
+
+  <map name="workmap">
+    <area shape="rect" coords="100,0,200,100" alt="Computer" onclick="click1()">
+    <area shape="rect" coords="0,100,100,200" alt="Computer" onclick="click2()">
+    <area shape="rect" coords="100,200,200,300" alt="Computer" onclick="click3()">
+    <area shape="rect" coords="200,100,300,200" alt="Computer" onclick="click4()">
+   
+  </map>
+
+</body>
+</html>
