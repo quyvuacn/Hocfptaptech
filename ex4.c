@@ -1,17 +1,12 @@
-#include <stdio.h> 
-#include <stdbool.h> 
-  
-main(){
-	int x,y;
-	x=5;
-	y=2;
-	printf("The integers are : %d & %d \n",x,y);
-	
-	printf("+ : %d \n",x+y);
-	printf("- : %d \n",x-y);
-	printf("* : %d \n",x*y);
-	printf("div : %d \n",x/y);
-	printf("mod : %d \n",x%y);
-	
-
+#include <stdio.h>   
+#include <stdlib.h> 
+int main(){
+    int num,r;
+    scanf("%d", &num);
+    r= num % 2;
+    if (r==0)
+      printf("Number is even");
+    else 
+     printf("Number is odd");
+    return 0;
 }
