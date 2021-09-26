@@ -1,9 +1,10 @@
-#include <stdio.h>   
-#include <stdlib.h> 
+#include <stdio.h> 
+#include <stdbool.h> 
+  
 int main(){
-    int a,b,c;
-    scanf("%d%d", &a, &b);
-    c=a+b;
-    printf("%d\n", c);
-    return 0;
+	int a,b;
+	printf("Enter 2 numbers");
+	scanf("%d%d",&a,&b);
+	int c=a+b;
+	printf("%d",c);
 }
