@@ -8,8 +8,8 @@ int main(){
     scanf("%f", &van);
      printf("Nhap diem anh :\n");
     scanf("%f", &anh);
-    printf("Tong diem 3 mon la %f\n",toan+van+anh);
-    printf("Trung binh 3 mon la %f\n",(toan+van+anh)/3 );
+    printf("Tong diem 3 mon la %.2f\n",toan+van+anh);
+    printf("Trung binh 3 mon la %.2f\n",(toan+van+anh)/3 );
     return 0;
 }
 
