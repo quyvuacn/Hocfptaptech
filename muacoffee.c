@@ -62,6 +62,11 @@ int main() {
  }
  printf("\n\n\n\n");
  printf("Hoa don cua cac quy khach la \n");
+ 
+  for(i=0;i<num;i++){
+ 	printf("Quy khach thu %d dung mon co ma %d \n",i+1,user[i]);
+  } 
+   
   printf("1.Tra da %d coc \n",menu[0]);
   printf("2.Nuoc mia %d coc \n",menu[1]);
   printf("3.Nuoc loc %d coc \n",menu[2]);
