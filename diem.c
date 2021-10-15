@@ -6,9 +6,9 @@ int xeploai(int sum);
 int main(){
 	int as,lythuyet,thuchanh,i;
 	char s;
-	printf("Danh gia hoc luc cua 25 sinh vien lop T2109M\n");
+	printf("Danh gia hoc luc sinh vien lop T2109M\n");
 	
-	for(i=1;i<=25;i++){
+	while(s!='n'){
 		printf("Nhap diem chuyen can \n");
 		scanf("%d",&as);
 		printf("Nhap diem ly thuyet \n");
