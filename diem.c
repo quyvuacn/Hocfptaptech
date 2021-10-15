@@ -3,7 +3,7 @@
 int xeploai(int as, int lythuyet, int thuchanh);
 
 int main(){
-	int as,lythuyet,thuchanh,i;
+	int as,lythuyet,thuchanh,i,xl;
 	char s;
 	printf("Danh gia hoc luc sinh vien lop T2109M\n");
 	
@@ -13,7 +13,8 @@ int main(){
 		scanf("%d",&lythuyet);
 		printf("Nhap diem thuc hanh \n");
 		scanf("%d",&thuchanh);
-		switch(xeploai(as,lythuyet,thuchanh)){
+	        xl=xeploai(as,lythuyet,thuchanh);
+		switch(xl){
 			case 3: 
 				printf("Xep loai Gioi\n");
 				break;
