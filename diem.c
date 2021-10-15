@@ -1,37 +1,43 @@
 #include <stdio.h>
 
-int sum(int as, int lythuyet, int thuchanh);
-int xeploai(int sum);
+int xeploai(int as, int lythuyet, int thuchanh);
 
 int main(){
 	int as,lythuyet,thuchanh,i;
 	char s;
 	printf("Danh gia hoc luc sinh vien lop T2109M\n");
 	
-	while(s!='n'){
-		printf("Nhap diem chuyen can \n");
+	do {	printf("Nhap diem chuyen can \n");
 		scanf("%d",&as);
 		printf("Nhap diem ly thuyet \n");
 		scanf("%d",&lythuyet);
 		printf("Nhap diem thuc hanh \n");
 		scanf("%d",&thuchanh);
-		printf("Diem trung binh cua thi sinh la %f\n",(float)sum(as,lythuyet,thuchanh)/3);
-		printf("Xep loai hoc luc %d\n",xeploai(sum(as,lythuyet,thuchanh)));
+		switch(xeploai(as,lythuyet,thuchanh)){
+			case 3: 
+				printf("Xep loai Gioi\n");
+				break;
+			case 2: 
+				printf("Xep loai Kha\n");
+				break;
+			case 1: 
+				printf("Xep loai Do\n");
+				break;
+			case 0: 
+				printf("Xep loai Truot\n");
+				break;			
+		}
+		
 		printf("Ban co muon tiep tuc khong ?\n");
 		fflush(stdin);
 		scanf("%c",&s);
-		if(s=='n')break;
-		;	
-	}
+	}while(s!='n');
 	
 }
 
-int sum(int as,int lythuyet, int thuchanh){
-	return as+lythuyet+thuchanh;
-}
 
-int xeploai(int sum){
-	float avg = (float)sum/3;
+int xeploai(int as,int lythuyet, int thuchanh){
+	float avg = ((float)as+ (float)lythuyet + (float)thuchanh)/3;
 	if(avg>=80)
 		return 3;
 	else if (avg>=60)
