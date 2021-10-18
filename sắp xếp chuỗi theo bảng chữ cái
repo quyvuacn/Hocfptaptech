@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char name[100][100],i,k,swap[100],len;
+    printf("Nhap so sinh vien <=100 \n");
+    scanf("%d",&len);
+    
+	for(i=0;i<len;i++){
+	   printf("Nhap ten sinh vien thu %d ",i+1);
+	   scanf("%s",name[i]);
+	}
+
+	for(i=0;i<len-1;i++){
+	 	for(k=i+1;k<len;k++){
+		 	strcpy(swap,name[i]);	
+		    if(strcmp(name[i],name[k])>0){			   	
+			   	strcpy(name[i],name[k]);
+			   	strcpy(name[k],swap);
+		 	}
+		}
+   }	
+	
+	for(i=0;i<len;i++){
+		printf("%s ",name[i]);
+	}
+
+}
