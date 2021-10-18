@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <string.h>
+
+void main(){
+    int num[100],i,k,swap,len;
+    int input[100];
+    printf("Nhap do dai cua mang <=100 ");
+    scanf("%d",&len);
+    
+// Nhap gia tri cho mang 
+	for(i=0;i<len;i++){
+	   printf("Nhap so thu %d trong mang ",i+1);
+	   scanf("%d",&num[i]);
+	   input[i]=num[i];
+	}
+// Sap xep mang tu tren xuong duoi
+	for(i=0;i<len-1;i++){
+	 	for(k=i+1;k<len;k++){
+		 	swap=input[i];	
+		    if(input[i]<input[k]){			   	
+		   	input[i]=input[k];
+		   	input[k]=swap;
+		   	}
+		 }
+	}
+	printf("\nMang sap xep tu lon toi nho la ");
+	for(i=0;i<len;i++){
+		printf("%d ",input[i]);
+		input[i]=num[i]; // Sao chep lai num
+	}
+	
+	for(i=0;i<len-1;i++){
+	 	for(k=i+1;k<len;k++){
+		 	swap=input[i];	
+		    if(input[i]>input[k]){			   	
+		   	input[i]=input[k];
+		   	input[k]=swap;
+		   	}
+		 }
+	}
+	
+	printf("\nMang sap xep tu nho toi lon la ");
+	for(i=0;i<len;i++){
+		printf("%d ",input[i]);
+	}
+
+}
+
+
+
+
+
+
+
+ 
+ 
+		
+
+
