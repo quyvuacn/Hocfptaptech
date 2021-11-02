@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Elliptical Shapes</title>
+		<style type="text/css">
+			p {
+				border: 5px solid #ee3e80;
+				padding: 10px;
+				width: 100px;
+				height: 100px;
+				display: inline-block;
+				margin: 20px;
+			}
+			p.one {
+				border-top-left-radius: 80px 50px;
+				-moz-border-radius-top-left: 80px 50px;
+				-webkit-border-radius-top-left: 80px 50px;
+			}
+			p.two {
+				border-radius: 1em 4em 1em 4em / 2em 1em 2em 1em;
+				-moz-border-radius: 1em 4em 1em 4em / 2em 1em 2em 1em;
+				-webkit-border-radius:  1em 4em 1em 4em / 2em 1em 2em 1em;
+				/*trên phải dưới trái/ độ bo */
+				/*https://developer.mozilla.org/fr/docs/Web/CSS/border-radius*/
+				
+			}
+			p.three {
+				padding: 0px;
+				border-radius: 100px;
+				-moz-border-radius: 100px;
+				-webkit-border-radius: 100px;
+			}
+			/*EX*/
+			#example1 {
+				border-radius: 2em / 5em;
+			}
+			/* is equivalent to:
+			border-top-left-radius: 2em 5em;
+			border-top-right-radius: 2em 5em;
+			border-bottom-right-radius: 2em 5em;
+			border-bottom-left-radius: 2em 5em; */
+
+			#example2 {
+			border-radius: 2em 1em 4em / 0.5em 3em;
+			}
+			/* is equivalent to:
+			border-top-left-radius: 2em 0.5em;
+			border-top-right-radius: 1em 3em;
+			border-bottom-right-radius: 4em 0.5em;
+			border-bottom-left-radius: 1em 3em; */
+		</style>
+	</head>
+	<body>
+		<p class="one"></p>
+		<p class="two"></p>
+		<p class="three"></p>
+	</body>
+</html>

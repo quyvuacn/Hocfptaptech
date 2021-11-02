@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Border Image</title>
+		<style type="text/css">
+			p {
+				width: 197px;
+				height: 54px;
+				border: 11px solid #ffffff;  /*solid : kiểu nét liền */
+			}
+			p.one {
+				-moz-border-image: url("images/dots.gif") 11 11 11 11 stretch; /*Trình duyệt cho firefox*/
+				-webkit-border-image: url("images/dots.gif") 11 11 11 11 stretch; /*stretch : Kiểu dãn đều */
+				border-image: url("images/dots.gif") 11 11 11 11 stretch;  /*11 11 11 11 = 11 ???*/
+			}
+			p.two {
+				-moz-border-image: url("images/dots.gif") 11 11 11 11 round; /*round : kiểu vòng*/
+				-webkit-border-image: url("images/dots.gif") 11 11 11 11 round;
+				border-image: url("images/dots.gif") 11 11 11 11  round; 
+				/*<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>*/
+			}
+			/* https://developer.mozilla.org/fr/docs/Web/CSS/border-image */
+		</style>
+	</head>
+	<body>
+		<p class="one"></p>
+		<p class="two"></p>
+		<img src="./images/dots.gif" alt="">
+	</body>
+</html>
