@@ -1,0 +1,8 @@
+.item:hover .Date {
+    display: block;
+    margin-left: 111px;
+}
+
+.item:hover{
+    color: brown;
+}
