@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ví Dụ 1 SS1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body> 
+    <div ng-app="convert" ng-controller="CostController">
+         <span>How is the weather today? : {{mess}}</span> <br>
+        <b>Convert:</b>   
+        <div>
+            degrees  C:        
+            <input type="number" min="0" ng-model="degree_C" required>
+        </div>
+        <div>
+            <span> degrees  F:</span>
+            <span>
+                {{degree_F}}
+            </span>
+            <button class="btn" ng-click="convert()">Convert</button>
+        </div>
+        <script>
+            var app = angular.module('convert', []);       
+            app.controller('CostController', function ($scope){
+                  $scope.mess = " "
+                $scope.convert = function (){
+                    this.degree_F = this.degree_C * 1.2 + 32;
+                    if(degree_C<20){
+                          this.mess='cold'
+                    }else if(degree_C<26){
+                          this.mess='cool'
+                    }else this.mess = 'hot'
+                };           
+            });
+        </script>
+    </div>
+</body>
+</html>
